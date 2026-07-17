@@ -1,14 +1,15 @@
+import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key="Messi_10_Winner_2022"
+    api_key=os.getenv("Messi_10_Second")
 )
 
 response = client.chat.completions.create(
-    model="gpt-5o-mini",
+    model="gpt-4o-mini",
     messages=[
-        {"role": "Do you know only footballer Lionel Messi ", 
-         "content": "Messi is the best football player more to Pelè ? "}
+        {"role": "user", 
+         "content": "Do you teach info for Messi ?"}
     ]
 )
 
